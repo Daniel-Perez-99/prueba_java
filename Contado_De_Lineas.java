@@ -14,52 +14,52 @@ public class Contado_De_Lineas{
         //CREACION DEL OBJETO ARCHIVO PARA ESTAR LEYENDO EL ARCHIVO
         File archivo = new File("/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java");
 
-	//LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS
-	contar_Lineas(archivo);
+	    //LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS
+	    contar_Lineas(archivo);
         
     }
 
     public static void contar_Lineas(File archivo){
     
-    try{
+        try{
     
         //VERIFICACION DE QUE EL ARCHIVO EXISTA
-        if(archivo.exists()){
+            if(archivo.exists()){
 
-            //EMPEZAMOS CON LA LECTURA
-              BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo));
+                //EMPEZAMOS CON LA LECTURA
+                BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo));
 
-	       String lineaLeida;
+	            String lineaLeida;
 	       
-	       //WHILE QUE PERMITE CONTAR SOLO CUANDO LA LINEA LEIDA NO SEA NULL
-	       while((lineaLeida = archivoLeer.readLine()) != null){
+	            //WHILE QUE PERMITE CONTAR SOLO CUANDO LA LINEA LEIDA NO SEA NULL
+	            while((lineaLeida = archivoLeer.readLine()) != null){
 
-			System.out.println(lineaLeida);
+			        System.out.println(lineaLeida);
 
-			//AUMENTAMOS EL NUMERO DE LINEAS
-			lineasTotales = lineasTotales + 1;
+			        //AUMENTAMOS EL NUMERO DE LINEAS
+			        lineasTotales = lineasTotales + 1;
 
-               }
+                }
 	        
-	        //IMPRESION DE LOS DATOS
-		System.out.println("");
-		System.out.println("Lineas totales: " + lineasTotales);
+	            //IMPRESION DE LOS DATOS
+		        System.out.println("");
+		        System.out.println("Lineas totales: " + lineasTotales);
 
-		//SE CIERRA LA LECTURA DEL ARCHIVO
-		archivoLeer.close();
+		        //SE CIERRA LA LECTURA DEL ARCHIVO
+		        archivoLeer.close();
 
 
-        }else{ //SI NO EXISTE EL ARCHIVO ENTONCES
+            }else{ //SI NO EXISTE EL ARCHIVO ENTONCES
 
-              System.out.println("El archivo no existe");
+                System.out.println("El archivo no existe");
+
+            }
+    
+        } catch(Exception e){
+
+            System.out.println(e.getMessage());
 
         }
-    
-    } catch(Exception e){
-
-        System.out.println(e.getMessage());
-
-    }
     
     }
 
