@@ -32,7 +32,7 @@ public class Contado_De_Lineas{
                 //EMPEZAMOS CON LA LECTURA
                 BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo));
 
-	            String lineaLeida = null;
+	            String lineaLeida;
 	       
 	            //WHILE QUE PERMITE CONTAR SOLO CUANDO LA LINEA LEIDA NO SEA NULL
 	            while((lineaLeida = archivoLeer.readLine()) != null){
@@ -42,14 +42,22 @@ public class Contado_De_Lineas{
 
                     if((letras.countTokens() != 0) && (lineaLeida.indexOf("*") == -1) && (lineaLeida.indexOf("//") == -1) && (lineaLeida.indexOf("import") == -1) && (lineaLeida.length() > 0)){
 
-                            if((lineaLeida.indexOf("main") != -1)){
+                        if((lineaLeida.indexOf("main") != -1)){
 
-                                //AUMENTAMOS EL NUMERO DE CLASES
-                                claseTotales = claseTotales + 1;
+                            //AUMENTAMOS EL NUMERO DE CLASES
+                            claseTotales = claseTotales + 1;
 
-                            }
-                            //AUMENTAMOS EL NUMERO DE LINEAS¡ 
-                            lineasTotales = lineasTotales + 1;
+                         }
+
+                        if((lineaLeida.indexOf("static") != -1) && (lineaLeida.indexOf("main") == -1)){
+
+                            //AUMENTAMOS EL NUMERO DE METODOS
+                            metodosTotales = metodosTotales + 1;
+
+                        }
+
+                        //AUMENTAMOS EL NUMERO DE LINEAS¡ 
+                        lineasTotales = lineasTotales + 1;
 
                     }
                     
@@ -60,7 +68,10 @@ public class Contado_De_Lineas{
                 System.out.println("Lineas totales: " + lineasTotales);
                 
                 System.out.println("");
-		        System.out.println("Clases totales: " + claseTotales);
+                System.out.println("Clases totales: " + claseTotales);
+                
+                System.out.println("");
+		        System.out.println("Metodos totales: " + metodosTotales);
 
 		        //SE CIERRA LA LECTURA DEL ARCHIVO
 		        archivoLeer.close();
