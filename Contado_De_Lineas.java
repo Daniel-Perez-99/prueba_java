@@ -1,71 +1,82 @@
-import java.io.BufferedReader; //1
-import java.io.File; //2
-import java.io.FileReader; //3
-import java.util.StringTokenizer; //4
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.StringTokenizer;
+import java.io.StreamTokenizer;
 
 
-public class Contado_De_Lineas{ //5
+public class Contado_De_Lineas{
 
-    //VARIABLE PARA CONTAR EL NUMERO DE LINEAS //6
-    static int lineasTotales=0; //7
+    //VARIABLE PARA CONTAR EL NUMERO DE LINEAS
+    static int lineasTotales=0;
+    static int claseTotales=0;
+    static int metodosTotales=0;
 
-    public static void main(String[] args) { //8
+    public static void main(String[] args) {
 
-        //CREACION DEL OBJETO ARCHIVO PARA ESTAR LEYENDO EL ARCHIVO //9
-        File archivo = new File("/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java"); //10
+        //CREACION DEL OBJETO ARCHIVO PARA ESTAR LEYENDO EL ARCHIVO
+        File archivo = new File("/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java");
 
-	    //LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS //11
-	    contar_Lineas(archivo); //12
+	    //LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS
+	    contar_Lineas(archivo);
         
-    } //13
+    }
 
-    public static void contar_Lineas(File archivo){ //14
+    public static void contar_Lineas(File archivo){
     
-        try{ //15
+        try{
     
-        //VERIFICACION DE QUE EL ARCHIVO EXISTA //16
-            if(archivo.exists()){ //17
+            //VERIFICACION DE QUE EL ARCHIVO EXISTA
+            if(archivo.exists()){
 
-                //EMPEZAMOS CON LA LECTURA //18
-                BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo)); //19
+                //EMPEZAMOS CON LA LECTURA
+                BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo));
 
-	            String lineaLeida; //20
+	            String lineaLeida = null;
 	       
-	            //WHILE QUE PERMITE CONTAR SOLO CUANDO LA LINEA LEIDA NO SEA NULL //21
-	            while((lineaLeida = archivoLeer.readLine()) != null){ //22
+	            //WHILE QUE PERMITE CONTAR SOLO CUANDO LA LINEA LEIDA NO SEA NULL
+	            while((lineaLeida = archivoLeer.readLine()) != null){
                     
-                    //CONTAMOS LAS PALABRAS DE LA LINEA //23
-                    StringTokenizer letras = new StringTokenizer(lineaLeida); //24
+                    //CONTAMOS LAS PALABRAS DE LA LINEA
+                    StringTokenizer letras = new StringTokenizer(lineaLeida);
 
-                    if(letras.countTokens() != 0){ //25
+                    if((letras.countTokens() != 0) && (lineaLeida.indexOf("*") == -1) && (lineaLeida.indexOf("//") == -1) && (lineaLeida.indexOf("import") == -1) && (lineaLeida.length() > 0)){
 
-                        //AUMENTAMOS EL NUMERO DE LINEAS //26
-                        lineasTotales = lineasTotales + 1; //27
+                            //if((lineaLeida.indexOf("") != -1)){
 
-                    } //28
+                                //AUMENTAMOS EL NUMERO DE CLASES
+                                //claseTotales = claseTotales + 1;
+
+                            //}
+                            //AUMENTAMOS EL NUMERO DE LINEAS
+                            lineasTotales = lineasTotales + 1;
+
+                    }
                     
-                } //29
+                }
 	        
-	            //IMPRESION DE LOS DATOS //30
-		        System.out.println(""); //31
-		        System.out.println("Lineas totales: " + lineasTotales); //32
+	            //IMPRESION DE LOS DATOS
+		        System.out.println("");
+                System.out.println("Lineas totales: " + lineasTotales);
+                
+                //System.out.println("");
+		        //System.out.println("Clases totales: " + claseTotales);
 
-		        //SE CIERRA LA LECTURA DEL ARCHIVO //33
-		        archivoLeer.close(); //34
+		        //SE CIERRA LA LECTURA DEL ARCHIVO
+		        archivoLeer.close();
 
 
-            }else{ //SI NO EXISTE EL ARCHIVO ENTONCES //35
+            }else{ //SI NO EXISTE EL ARCHIVO ENTONCES
 
-                System.out.println("El archivo no existe"); //36
+                System.out.println("El archivo no existe");
 
-            } //37
+            }
     
-        } catch(Exception e){ //38
+        } catch(Exception e){
 
-            System.out.println(e.getMessage()); //39
+            System.out.println(e.getMessage());
 
-        } //40
+        }
     
-    } //41
-
-} //42
+    }
+}
