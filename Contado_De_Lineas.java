@@ -12,7 +12,7 @@ public class Contador_De_Lineas{
     public static void main(String[] args) {
 
         //CREACION DEL OBJETO ARCHIVO PARA ESTAR LEYENDO EL ARCHIVO
-        File archivo = new File(“/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java”)
+        File archivo = new File("/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java");
 
 	//LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS
 	contar_Lineas(archivo);
@@ -42,8 +42,8 @@ public class Contador_De_Lineas{
                }
 	        
 	        //IMPRESION DE LOS DATOS
-		System.out.println(“”);
-		System.out.println(“Lineas totales: ” + lineasTotales);
+		System.out.println("");
+		System.out.println("Lineas totales: " + lineasTotales);
 
 		//SE CIERRA LA LECTURA DEL ARCHIVO
 		archivoLeer.close();
@@ -51,7 +51,7 @@ public class Contador_De_Lineas{
 
         }else{ //SI NO EXISTE EL ARCHIVO ENTONCES
 
-              System.out.println(“El archivo no existe”):
+              System.out.println("El archivo no existe"):
 
         }
     
