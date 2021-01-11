@@ -29,7 +29,25 @@ public class Contador_De_Lineas{
             //EMPEZAMOS CON LA LECTURA
               BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo));
 
-	       String linealLeida;
+	       String lineaLeida;
+	       
+	       //WHILE QUE PERMITE CONTAR SOLO CUANDO LA LINEA LEIDA NO SEA NULL
+	       while((lineaLeida = archivoLeer.readLine()) != null){
+
+			System.out.println(lineaLeida);
+
+			//AUMENTAMOS EL NUMERO DE LINEAS
+			lineasTotales = lineasTotales + 1;
+
+               }
+	        
+	        //IMPRESION DE LOS DATOS
+		System.out.println(“”);
+		System.out.println(“Lineas totales: ” + lineasTotales);
+
+		//SE CIERRA LA LECTURA DEL ARCHIVO
+		archivoLeer.close();
+
 
         }else{ //SI NO EXISTE EL ARCHIVO ENTONCES
 
