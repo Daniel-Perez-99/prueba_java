@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.util.StringTokenizer;
 
 
-public class Contador_De_Lineas{
+public class Contado_De_Lineas{
 
     //VARIABLE PARA CONTAR EL NUMERO DE LINEAS
     static int lineasTotales=0;
@@ -51,7 +51,7 @@ public class Contador_De_Lineas{
 
         }else{ //SI NO EXISTE EL ARCHIVO ENTONCES
 
-              System.out.println("El archivo no existe"):
+              System.out.println("El archivo no existe");
 
         }
     
