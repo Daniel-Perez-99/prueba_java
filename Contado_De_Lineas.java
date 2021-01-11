@@ -42,13 +42,13 @@ public class Contado_De_Lineas{
 
                     if((letras.countTokens() != 0) && (lineaLeida.indexOf("*") == -1) && (lineaLeida.indexOf("//") == -1) && (lineaLeida.indexOf("import") == -1) && (lineaLeida.length() > 0)){
 
-                            //if((lineaLeida.indexOf("") != -1)){
+                            if((lineaLeida.indexOf("main") != -1)){
 
                                 //AUMENTAMOS EL NUMERO DE CLASES
-                                //claseTotales = claseTotales + 1;
+                                claseTotales = claseTotales + 1;
 
-                            //}
-                            //AUMENTAMOS EL NUMERO DE LINEAS
+                            }
+                            //AUMENTAMOS EL NUMERO DE LINEAS¡ 
                             lineasTotales = lineasTotales + 1;
 
                     }
@@ -59,8 +59,8 @@ public class Contado_De_Lineas{
 		        System.out.println("");
                 System.out.println("Lineas totales: " + lineasTotales);
                 
-                //System.out.println("");
-		        //System.out.println("Clases totales: " + claseTotales);
+                System.out.println("");
+		        System.out.println("Clases totales: " + claseTotales);
 
 		        //SE CIERRA LA LECTURA DEL ARCHIVO
 		        archivoLeer.close();
