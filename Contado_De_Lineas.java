@@ -1,3 +1,4 @@
+//IMPOTAR TODAS LAS LIBRERIAS A UTILIZAR
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,14 +8,14 @@ import java.io.StreamTokenizer;
 
 public class Contado_De_Lineas{
 
-    //VARIABLE PARA CONTAR EL NUMERO DE LINEAS
+    //VARIABLEA PARA CONTAR EL NUMERO DE LINEAS, CLASES Y METODOS
     static int lineasTotales=0;
     static int claseTotales=0;
     static int metodosTotales=0;
 
     public static void main(String[] args) {
 
-        //CREACION DEL OBJETO ARCHIVO PARA ESTAR LEYENDO EL ARCHIVO
+        //CREACION DEL OBJETO ARCHIVO PARA ESTAR CARGANDO EL ARCHIVO
         File archivo = new File("/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java");
 
 	    //LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS
@@ -22,6 +23,7 @@ public class Contado_De_Lineas{
         
     }
 
+    //METODO QUE PERMITE CONTAR LAS LINEAS DE CODIGO, NUMERO DE METODOS Y CLASES
     public static void contar_Lineas(File archivo){
     
         try{
@@ -40,24 +42,27 @@ public class Contado_De_Lineas{
                     //CONTAMOS LAS PALABRAS DE LA LINEA
                     StringTokenizer letras = new StringTokenizer(lineaLeida);
 
-                    if((letras.countTokens() != 0) && (lineaLeida.indexOf("*") == -1) && (lineaLeida.indexOf("//") == -1) && (lineaLeida.indexOf("import") == -1) && (lineaLeida.length() > 0)){
+                    //SI LA LINEA NO ESTA VACIA, SI NO TIENE ASTERISCOS, DOBLE DIAGONAL Y LA PALABRA IMPORT ENTONCES ENTRAMOS AL IF
+                    if((letras.countTokens() != 0) && (lineaLeida.indexOf("*") == -1) && (lineaLeida.indexOf("//") == -1) && (lineaLeida.indexOf("import") == -1)){
 
-                        if((lineaLeida.indexOf("main") != -1)){
+                        //SI LA LINEA LEIDA TIENE LA PALABRA MAIN, ENTONCES ENTRAMOS AL IF
+                        if((lineaLeida.indexOf("main") != -1) && (lineaLeida.indexOf("if") == -1)){
 
                             //AUMENTAMOS EL NUMERO DE CLASES
-                            claseTotales = claseTotales + 1;
+                            claseTotales++;
 
-                         }
+                        }
 
-                        if((lineaLeida.indexOf("static") != -1) && (lineaLeida.indexOf("main") == -1)){
+                        //SI LA LINEA LEIDA TIENE LA PALABRA STATIC PERO NO TIENE LA DE MAIN, ENTONCES ENTRAMOS AL IF
+                        if((lineaLeida.indexOf("public static") != -1) && (lineaLeida.indexOf("main") == -1) && (lineaLeida.indexOf("if") == -1)){
 
                             //AUMENTAMOS EL NUMERO DE METODOS
-                            metodosTotales = metodosTotales + 1;
+                            metodosTotales++;
 
                         }
 
                         //AUMENTAMOS EL NUMERO DE LINEAS¡ 
-                        lineasTotales = lineasTotales + 1;
+                        lineasTotales++;
 
                     }
                     
@@ -90,4 +95,5 @@ public class Contado_De_Lineas{
         }
     
     }
+
 }
