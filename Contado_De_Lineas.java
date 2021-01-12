@@ -64,7 +64,7 @@ public class Contado_De_Lineas{
                     if((letras.countTokens() != 0) && (lineaLeida.indexOf("*") == -1) && (lineaLeida.indexOf("//") == -1) && (lineaLeida.indexOf("import") == -1)){
 
                         //SI LA LINEA LEIDA TIENE LA PALABRA MAIN, ENTONCES ENTRAMOS AL IF
-                        if((lineaLeida.indexOf("main") != -1) && (lineaLeida.indexOf("if") == -1)){
+                        if((lineaLeida.indexOf("class") != -1) && (lineaLeida.indexOf("if") == -1)){
 
                             //AUMENTAMOS EL NUMERO DE CLASES
                             claseTotales++;
@@ -72,7 +72,7 @@ public class Contado_De_Lineas{
                         }
 
                         //SI LA LINEA LEIDA TIENE LA PALABRA STATIC PERO NO TIENE LA DE MAIN, ENTONCES ENTRAMOS AL IF
-                        if((lineaLeida.indexOf("public static") != -1) && (lineaLeida.indexOf("main") == -1) && (lineaLeida.indexOf("if") == -1)){
+                        if((lineaLeida.indexOf("public static") != -1) && (lineaLeida.indexOf("if") == -1)){
 
                             //AUMENTAMOS EL NUMERO DE METODOS
                             metodosTotales++;
