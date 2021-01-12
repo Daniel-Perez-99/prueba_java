@@ -7,19 +7,28 @@ import java.util.StringTokenizer;
 
 public class Contado_De_Lineas{
 
-    //VARIABLEA PARA CONTAR EL NUMERO DE LINEAS, CLASES Y METODOS
+    //VARIABLES PARA CONTAR EL NUMERO DE LINEAS, CLASES Y METODOS
     static int lineasTotales=0;
     static int claseTotales=0;
     static int metodosTotales=0;
+    static File archivo=null;
 
     public static void main(String[] args) {
 
-        //CREACION DEL OBJETO ARCHIVO PARA ESTAR CARGANDO EL ARCHIVO
-        File archivo = new File("/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java");
-
-	    //LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS
-	    contar_Lineas(archivo);
+        //LLAMAR EL MÉTODO QUE ME PERMITIRÁ cargar el archivo
+        cargar_Archivo(archivo);
         
+    }
+
+    //METODO QUE PERMITE CARGAR EL ARCHIVO Y ADEMAS LLAMA A LA FUNCION CONTAR_LINEAS
+    public static void cargar_Archivo(File archivo){
+
+        //CREACION DEL OBJETO ARCHIVO PARA ESTAR CARGANDO EL ARCHIVO
+        File arch = new File("/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java");
+        
+        //LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS
+	    contar_Lineas(arch);
+
     }
 
     //METODO QUE PERMITE CONTAR LAS LINEAS DE CODIGO, NUMERO DE METODOS Y CLASES
@@ -86,7 +95,8 @@ public class Contado_De_Lineas{
     
         } catch(Exception e){
 
-            System.out.println(e.getMessage());
+           // System.out.println(e.getMessage());
+           System.out.println("Error");
 
         }
     
