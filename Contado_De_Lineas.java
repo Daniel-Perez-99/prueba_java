@@ -3,7 +3,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.StringTokenizer;
-import java.io.StreamTokenizer;
 
 
 public class Contado_De_Lineas{
@@ -69,14 +68,11 @@ public class Contado_De_Lineas{
                 }
 	        
 	            //IMPRESION DE LOS DATOS
-		        System.out.println("");
-                System.out.println("Lineas totales: " + lineasTotales);
+                System.out.println("\nLineas totales: " + lineasTotales);
                 
-                System.out.println("");
-                System.out.println("Clases totales: " + claseTotales);
+                System.out.println("\nClases totales: " + claseTotales);
                 
-                System.out.println("");
-		        System.out.println("Metodos totales: " + metodosTotales);
+		        System.out.println("\nMetodos totales: " + metodosTotales);
 
 		        //SE CIERRA LA LECTURA DEL ARCHIVO
 		        archivoLeer.close();
