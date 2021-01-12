@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.StringTokenizer;
+import java.util.Scanner;
 
 
 public class Contado_De_Lineas{
@@ -23,8 +24,17 @@ public class Contado_De_Lineas{
     //METODO QUE PERMITE CARGAR EL ARCHIVO Y ADEMAS LLAMA A LA FUNCION CONTAR_LINEAS
     public static void cargar_Archivo(File archivo){
 
-        //CREACION DEL OBJETO ARCHIVO PARA ESTAR CARGANDO EL ARCHIVO
-        File arch = new File("/Users/titaniumac1/documents/archivos_java/ejercicio/prueba_java/Contado_De_Lineas.java");
+        //MENSAJE MOSTRADO AL USUARIO PARA LEER UN ARCHIVO CUALQUIERA
+        System.out.println("Favor ingresar el archivo o ruta del archivo a analizar:");
+
+        //CREAR EL OBJETO QUE PERMITE TOMAR DATOS DEL TECLADO
+        Scanner nombre_Del_Archivo = new Scanner(System.in);
+
+        //GUARDAR LA INFORMACION QUE ESCRIBA EL USUARIO EN LA VARIABLE N_ARCHIVO
+        String n_Archivo = nombre_Del_Archivo.nextLine();
+
+        //CREACION DEL OBJETO ARCH PARA ESTAR CARGANDO EL ARCHIVO DEFINIDO EN N_ARCHIVO
+        File arch = new File(n_Archivo);
         
         //LLAMAR EL MÉTODO QUE ME PERMITIRÁ CONTAR LAS LINEAS
 	    contar_Lineas(arch);
