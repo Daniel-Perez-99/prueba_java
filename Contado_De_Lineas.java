@@ -15,7 +15,7 @@ public class Contado_De_Lineas{
 
     public static void main(String[] args) {
 
-        //LLAMAR EL MÉTODO QUE ME PERMITIRÁ cargar el archivo
+        //LLAMAR EL MÉTODO QUE ME PERMITIRÁ CARGAR EL ARCHIVO
         cargar_Archivo(archivo);
         
     }
@@ -94,9 +94,9 @@ public class Contado_De_Lineas{
             }
     
         } catch(Exception e){
-
-           // System.out.println(e.getMessage());
-           System.out.println("Error");
+            
+            //Imprimir un mensaje de error cuando no carge el archivo
+            System.out.println("Error");
 
         }
     
